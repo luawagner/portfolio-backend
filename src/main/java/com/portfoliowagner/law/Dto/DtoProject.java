@@ -11,7 +11,7 @@ public class DtoProject {
  private String descriptionP;
  @NotBlank
 private String imgP;
-@NotBlank
+
     private String urlP;
     @NotBlank
     private String githubP;
