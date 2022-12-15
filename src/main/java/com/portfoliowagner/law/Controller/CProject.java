@@ -56,11 +56,9 @@ public class CProject {
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoProject dtoPro) {
-        if ((dtoPro.getNombreP()).isBlank()) {
-            return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
+        
 
-        Project project = new Project(dtoPro.getNombreP(), dtoPro.getDescriptionP(), dtoPro.getGithubP(), dtoPro.getImgP(), dtoPro.getUrlP());
+        Project project = new Project(dtoPro.getNombreP(), dtoPro.getDescriptionP(),  dtoPro.getImgP(), dtoPro.getUrlP(),dtoPro.getGithubP());
         sProject.save(project);
 
         return new ResponseEntity(new Mensaje("Proyecto agregado"), HttpStatus.OK);
